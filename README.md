@@ -1,33 +1,65 @@
-⚙️ Explicación de los triggers
+📌 Nombre
 
-El proyecto utiliza distintos triggers de GitHub Actions para ejecutar workflows automáticamente según determinados eventos.
+Automatización de workflows con GitHub Actions
 
-🔹 push
+⚙️ Descripción de los workflows
 
-Se activa cuando se realizan cambios en el repositorio y se envían (push) a una rama específica.
-Permite validar automáticamente el código ante cada actualización.
+El proyecto implementa distintos workflows utilizando GitHub Actions, cada uno asociado a un evento específico del repositorio.
 
-🔹 pull_request
+🔹 Workflow 1: push
 
-Se ejecuta cuando se crea o actualiza un Pull Request hacia una rama (por ejemplo, main).
-Se utiliza para verificar que los cambios propuestos cumplen con los requisitos antes de ser integrados.
+Se ejecuta cuando se realiza un push a la rama main.
+Imprime el mensaje:
+Workflow activado por push
 
-🔹 issues
+🔹 Workflow 2: pull_request
 
-Se activa cuando se crea un nuevo issue en el repositorio.
-Permite automatizar tareas relacionadas con la gestión de incidencias o solicitudes.
+Se ejecuta cuando se crea o actualiza un Pull Request hacia la rama main.
+Imprime el mensaje:
+Pull request detectado
 
-🔹 issue_comment
+🔹 Workflow 3: issues
 
-Se ejecuta cuando se agrega un comentario en un issue o Pull Request.
-En este proyecto, se utiliza con una condición para ejecutarse únicamente cuando el comentario pertenece a un Pull Request.
+Se ejecuta cuando se crea un nuevo issue en el repositorio.
+Imprime el mensaje:
+Nuevo issue creado
 
-🔹 workflow_dispatch
+🔹 Workflow 4: issue_comment
 
-Permite ejecutar un workflow manualmente desde la interfaz de GitHub.
-Admite parámetros de entrada, como en este caso un nivel de alerta seleccionable.
+Se ejecuta cuando se realiza un comentario.
+Está configurado para ejecutarse únicamente cuando el comentario pertenece a un Pull Request.
+Imprime el mensaje:
+Comentario en PR detectado
 
-🔹 schedule
+🔹 Workflow 5: workflow_dispatch
 
-Se ejecuta automáticamente en intervalos de tiempo definidos mediante una expresión cron.
-Se utiliza para tareas programadas, como procesos periódicos o verificaciones automáticas.
+Permite ejecutar el workflow manualmente desde GitHub.
+Incluye un input de tipo choice (nivel de alerta: bajo, medio o alto).
+Imprime el valor seleccionado por el usuario.
+
+🔹 Workflow 6: schedule
+
+Se ejecuta automáticamente en intervalos de tiempo definidos (cron).
+En este caso, se configuró para ejecutarse periódicamente.
+Imprime el mensaje:
+Ejecución programada
+
+## 📸 Evidencias de ejecución
+
+### ✔ Workflow push
+![Push](images/push.png)
+
+### ✔ Workflow pull_request
+![PR](images/pull-request.png)
+
+### ✔ Workflow issues
+![Issues](images/issues.png)
+
+### ✔ Workflow issue_comment
+![Issue Comment](images/issue-comment.png)
+
+### ✔ Workflow workflow_dispatch
+![Manual](images/workflow-dispatch.png)
+
+### ✔ Workflow schedule
+![Schedule](images/schedule.png)
