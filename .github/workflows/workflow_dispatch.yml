@@ -1,0 +1,21 @@
+name: Workflow Manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      nivel:
+        description: "Nivel de alerta"
+        required: true
+        type: choice
+        options:
+          - bajo
+          - medio
+          - alto
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar nivel
+        run: |
+          echo "Nivel seleccionado: ${{ inputs.nivel }}"

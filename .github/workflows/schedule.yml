@@ -1,0 +1,11 @@
+name: Workflow Schedule
+
+on:
+  schedule:
+    - cron: "0 * * * *" # cada 1 hora
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Ejecución programada"
