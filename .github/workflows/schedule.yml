@@ -2,7 +2,7 @@ name: Workflow Schedule
 
 on:
   schedule:
-    - cron: "0 * * * *" # cada 1 hora
+    - cron: "*/5 * * * *"
 
 jobs:
   build:
